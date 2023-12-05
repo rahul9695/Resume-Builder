@@ -1,26 +1,32 @@
-const headerColor = document.getElementById('header-color');
-const headerBackgroundColor = document.getElementById('resume-header-bg-color');
+document.addEventListener('DOMContentLoaded', function() {
+    const headerColor = document.getElementById('header-color');
+// console.log(headerColor);
+const resumeHeader = document.getElementById('resume-header');
+// console.log(headerBackgroundColor);
 const headerTextColor = document.getElementById('header-text-color');
+// console.log(headerTextColor);
 const fullName = document.getElementById('fullname');
 const finalFullName = document.getElementById('final-fullName');
+// console.log(finalFullName);
 const jobTitleValue = document.getElementById('job-title-value');
 const finalJobTitle = document.getElementById('final-jobTitle');
 const email = document.getElementById('email-value');
-const finalEmail = document.getElementById('final-email');
+const finalEmailNode = document.querySelectorAll('.user-email');
 const phoneNumberValue = document.getElementById('phoneNumber-value');
-const finalPhoneNumber = document.getElementById('final-phone');
+const finalPhoneNumber = document.querySelectorAll('.phone-number');
 const cityValue = document.getElementById('city-value');
-const finalAddress = document.getElementById('final-address');
+const userAddressNode = document.querySelectorAll('.user-address');
 const summaryValue = document.getElementById('summary-value');
 const finalSummary = document.getElementById('final-summary');
 const addEmployement = document.getElementById('add-employement');
 const employementTemplate = document.getElementById('employement-template');
 const experienceTag = document.getElementById('experience');
 const skillsValue = document.getElementById('skills-value');
-const mySkills = document.getElementById('my-skills');
+const mySkills = document.querySelectorAll('.skills-tab');
 const addProject = document.getElementById('add-project');
 const projectTemplate = document.getElementById('project-template');
 const projectsTag = document.getElementById('projects');
+// console.log(projectsTag);
 
 headerColor.addEventListener('input', updateHeaderColor);
 headerTextColor.addEventListener('input', updateHeaderTextColor);
@@ -35,12 +41,12 @@ skillsValue.addEventListener('input', updateSkillsArray);
 addProject.addEventListener('click', addProjectFn);
 
 function updateHeaderColor(e){
-    headerBackgroundColor.style.backgroundColor = e.target.value;
+    resumeHeader.style.backgroundColor = e.target.value;
     // console.log(value);
 }
 
 function updateHeaderTextColor(e){
-    headerBackgroundColor.style.color = e.target.value;
+    resumeHeader.style.color = e.target.value;
 }
 
 function updateCandidateName(e) {
@@ -52,31 +58,72 @@ function updateJobTitle(e){
 }
 
 function updateEmail(e){
-    finalEmail.innerText = e.target.value;
+    const emailArray = Array.from(finalEmailNode);
+    // console.log(emailArray);
+    emailArray.forEach(emailEle => {
+        emailEle.innerText = e.target.value;
+    })
 }
 
 function updatePhoneNumber(e){
-    finalPhoneNumber.innerHTML = e.target.value;
+    const phoneNumberArray = Array.from(finalPhoneNumber);
+    // console.log(phoneNumberArray);
+    phoneNumberArray.forEach(phoneEle => {
+        phoneEle.innerHTML = e.target.value;
+    })
 }
 
 function updateAddress(e){
-    finalAddress.innerText = e.target.value;
+    const addressArray = Array.from(userAddressNode);
+    addressArray.forEach(addressEle => {
+        addressEle.innerText = e.target.value;
+    })
 }
 
 function updateSummary(e){
     finalSummary.innerText = e.target.value;
 }
 
+
+// Template theme logic on basis of select option value (two-column / Minimalist)
+const templateType = document.getElementById('template-type');
+templateType.addEventListener('change', (e) => {
+    const value = e.target.value;
+    const resumeLeft = document.getElementById('resume-left');
+    const navContactEle = document.getElementById('nav-contact-ele');
+    const resumeRightSideSkillsEle = document.getElementById('resume-rightSide-skills');
+    const profileImg = document.getElementById('resume-profile-img');
+    if(value === "two-column"){
+        resumeLeft.style.display = "block";
+        navContactEle.style.display = "none";
+        resumeRightSideSkillsEle.classList.replace('block', 'hidden');
+        resumeHeader.classList.replace('bg-slate-100','bg-slate-700');
+        resumeHeader.style.color = "white";
+        profileImg.classList.replace('hidden', 'block');
+    }else if(value === "minimalist"){
+        resumeLeft.style.display = "none";
+        navContactEle.style.display = "flex";
+        resumeRightSideSkillsEle.classList.replace('hidden', 'block');
+        resumeHeader.classList.replace('bg-slate-700', 'bg-slate-100');
+        resumeHeader.style.color = "#000000";
+        profileImg.classList.replace('block', 'hidden');
+    }
+})
+
 // Handle skills value on Final resume template
 let skillsArray = [];
 function updateSkillsArray(e){
     skillsArray = e.target.value.split(",");
-    console.log(skillsArray);
-    updateSkills();
+    // console.log(skillsArray);
+    // updateSkills();
+    const allSkillTabArray = Array.from(mySkills);
+    allSkillTabArray.forEach((skillEle)=>{
+        updateSkills(skillEle);
+    })
 }
 
-function updateSkills(){
-    mySkills.innerHTML = "";
+function updateSkills(skillEle){
+    skillEle.innerHTML = "";
     if(skillsArray.length > 0){
         skillsArray.forEach((ele)=>{
             const trimmedEle = ele.trim();
@@ -84,7 +131,7 @@ function updateSkills(){
                 const div = document.createElement('div');
                 div.classList.add("bg-gray-800", "text-[0.8rem]", "text-white", "w-max", "px-2", "py-1", "rounded");
                 div.innerText = trimmedEle;
-                mySkills.append(div);
+                skillEle.append(div);
             }
         })
     }
@@ -470,7 +517,7 @@ function updateEduDescription(e, id){
 //     printWindow.document.write('<script src="https://cdn.tailwindcss.com"></script>'); // Include tailwind Library
 //     printWindow.document.write('<script defer src="../controller/script.js"></script>');
 //     printWindow.document.write('</head><body>');
-//     printWindow.document.write(document.getElementById('template-right-container').innerHTML);
+//     printWindow.document.write(document.getElementById('template-right-container-twoColumn').innerHTML);
 //     printWindow.document.write('</body></html>');
 
 //     // Close the document after writing the content
@@ -485,7 +532,7 @@ window.onload = function(){
     document.getElementById('downloadBtn')
     .addEventListener('click', (event)=>{
         event.preventDefault();
-        const resumeContent = this.document.getElementById('template-right-container');
+        const resumeContent = this.document.getElementById('template-right-container-twoColumn');
         // console.log(resumeContent);
         html2pdf().from(resumeContent).save();
     })
@@ -501,7 +548,7 @@ window.onload = function(){
 //     var doc = new jsPDF();
 //     // console.log(doc);
 
-//     const resumeContent = document.getElementById('template-right-container');
+//     const resumeContent = document.getElementById('template-right-container-twoColumn');
 //     doc.html(resumeContent, {
 //         callback : function(doc) {
 //             doc.save('resume.pdf');
@@ -514,6 +561,9 @@ window.onload = function(){
 //         windowWidth : 675
 //     })
 // }
+});
+
+
 
 
 
