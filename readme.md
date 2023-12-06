@@ -45,7 +45,7 @@ git clone https://github.com/rahul9695/Resume-Builder.git
 ## 👦 Developed By:
 <h2 align="center">Rahul Meena</h2>
 <p align="center">
-  <a href="https://github.com/rahul9695"><img src="https://drive.google.com/file/d/0B_Nz3nOGgQFPRXlNY0JlNGRGZGRDbms5Vk96NG12NU1hZGxV/view?usp=drive_link&resourcekey=0-JnJUqyXRXLDPPPu7j3RBZg" width=150px height=150px /></a> 
+  <a href="https://github.com/rahul9695"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=150px height=150px /></a> 
     
 <p align="center">
   <a target="_blank"href="https://www.linkedin.com/in/rahul-meena9695/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
