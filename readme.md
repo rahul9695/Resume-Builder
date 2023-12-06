@@ -45,9 +45,9 @@ git clone https://github.com/rahul9695/Resume-Builder.git
 ## 👦 Developed By:
 <h2 align="center">Rahul Meena</h2>
 <p align="center">
-  <a href="https://github.com/rahul9695"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=150px height=150px /></a> 
-  <a href="https://github.com/rahul9695"><img src="[https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png](https://github.com/rahul9695/Resume-Builder/assets/120627949/165db963-9c13-4a74-947b-c8a56753c6ff)" width=150px height=150px /></a> 
-    ![rahul-1](https://github.com/rahul9695/Resume-Builder/assets/120627949/165db963-9c13-4a74-947b-c8a56753c6ff)
+<!--   <a href="https://github.com/rahul9695"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=150px height=150px /></a>  -->
+  <a href="https://github.com/rahul9695"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/120627949/288414839-165db963-9c13-4a74-947b-c8a56753c6ff.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231206%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231206T131041Z&X-Amz-Expires=300&X-Amz-Signature=bd64cc2aae3f1140ede22c65cee949651a6e351fa7fa84fb0bfe327098c5a6ae&X-Amz-SignedHeaders=host&actor_id=120627949&key_id=0&repo_id=726793408" width=150px height=150px /></a> 
+</p>
 <p align="center">
   <a target="_blank"href="https://www.linkedin.com/in/rahul-meena9695/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="mailto:rahul.meena9695@gmail.com?subject=Hello%20Rahul,%20From%20Github"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
