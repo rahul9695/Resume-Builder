@@ -12,7 +12,7 @@ This project helps to organize thoughts and ensures that everything is filled in
 
 ## 📽 Sample Demo:
 
-https://github.com/rahul9695/Resume-Builder/assets/120627949/4aee7d55-eb8e-46ca-a4cb-ba07e6fed53d
+https://github.com/rahul9695/Resume-Builder/assets/120627949/272b8fef-85fb-4955-906f-b1eb9ab3debd
 
 ## 🌎 Deployed Website:
 https://rahul9695.github.io/Resume-Builder/view/index.html
